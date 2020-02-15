@@ -1,5 +1,7 @@
 package com.hammingweight.springdatamongodbencryptautoconfiguration;
 
+import com.bol.crypt.CryptVault;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
