@@ -16,16 +16,20 @@ public class AutoConfiguration {
     @Value("${hammingweight.spring.data.mongodb.encrypt.key}")
     private String secretKey;
 
+    @Value("${hammingweight.spring.data.mongodb.encrypt.silentdecryptionfailures:false}")
+    private boolean silentDecryptionFailures;
+
     @Bean
     public CryptVault cryptVault() throws Exception {
-        byte[] vaultKey = Base64.getDecoder().decode(secretKey);
+        byte[] secretKeyBytes = Base64.getDecoder().decode(secretKey);
         return new CryptVault()
-                .with256BitAesCbcPkcs5PaddingAnd128BitSaltKey(0, vaultKey)
+                .with256BitAesCbcPkcs5PaddingAnd128BitSaltKey(0, secretKeyBytes)
                 .withDefaultKeyVersion(0);
     }
 
     @Bean
     CachedEncryptionEventListener cachedEncryptionEventListener(CryptVault cryptVault) {
-        return new CachedEncryptionEventListener(cryptVault);
+        return new CachedEncryptionEventListener(cryptVault)
+                .withSilentDecryptionFailure(silentDecryptionFailures);
     }
 }
