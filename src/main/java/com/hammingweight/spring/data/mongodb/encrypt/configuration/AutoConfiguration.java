@@ -16,7 +16,7 @@ public class AutoConfiguration {
     @Value("${hammingweight.spring.data.mongodb.encrypt.key}")
     private String secretKey;
 
-    @Value("${hammingweight.spring.data.mongodb.encrypt.silentdecryptionfailures:false}")
+    @Value("${hammingweight.spring.data.mongodb.encrypt.silent-decryption-failures:false}")
     private boolean silentDecryptionFailures;
 
     @Bean
