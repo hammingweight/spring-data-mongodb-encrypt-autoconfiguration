@@ -6,7 +6,7 @@ Autoconfigures bol.com's [Spring Data Encryption for MongoDB](https://github.com
 
 This project is intended to simplify the configuration of *Spring Data Encryption for MongoDB* if your requirements are simple.
 
-This might be suitabled:
+This might be suitable:
  * If you don't need to support more than one encryption key.
  * You're not using a custom mapper to may Mongo documents to Java domain objects.
  
