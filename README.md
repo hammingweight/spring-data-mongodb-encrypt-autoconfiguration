@@ -49,17 +49,17 @@ Once you've built this project, you can add it as a dependency to your own proje
  Naturally, you'll also need to add a MongoDB dependency
  
  ```
- <dependency>
-    <groupId>com.hammingweight</groupId>
-    <artifactId>spring-data-mongodb-encrypt-autoconfiguration</artifactId>
-    <version>0.0.1</version>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-mongodb</artifactId>
 </dependency>
  ```
  
- ## Using this
- Just annotate your model's sensitive fields with `@Encrypt` as described at [Spring Data Encryption for MongoDB](https://github.com/bolcom/spring-data-mongodb-encrypt) and set the key and any other `Configuration` properties that you might need for your MongoDB installation. For example,
+## Using this
+Just annotate your model's sensitive fields with `@Encrypt` as described at [Spring Data Encryption for MongoDB](https://github.com/bolcom/spring-data-mongodb-encrypt) and set the key and any other `Configuration` properties that you might need for your MongoDB installation. For example,
  
  ```
 export SPRING_DATA_MONGODB_PORT=27018
 export HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY="hqHKBLV83LpCqzKpf8OvutbCs+O5wX5BPu3btWpEvXA="
 ```
+
