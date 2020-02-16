@@ -8,7 +8,7 @@ This project is intended to simplify the configuration of *Spring Data Encryptio
 
 This might be suitable:
  * If you don't need to support more than one encryption key.
- * You're not using a custom mapper to may Mongo documents to Java domain objects.
+ * You're not using a custom mapper to map Mongo documents to Java domain objects.
  
 The autoconfiguration depends on a single `Configuration` property, `hammingweight.spring.data.mongodb.encrypt.key` being set that
 contains the base-64 encoding of a 128-bit AES key. For example, in `application.properties`
