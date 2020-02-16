@@ -17,8 +17,7 @@ contains the base-64 encoding of a 128-bit AES key. For example, in `application
 hammingweight.spring.data.mongodb.encrypt.key=hqHKBLV83LpCqzKpf8OvutbCs+O5wX5BPu3btWpEvXA=
 ```
 
-Of course, putting a key in your application configuration may not be secure. In practice, you may be more likely to pass the 
-value in an environment variable. For example,
+Of course, putting a key in your application configuration may not be secure. In practice, you might pass the value in an environment variable. For example,
 
 ```
 export HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY="hqHKBLV83LpCqzKpf8OvutbCs+O5wX5BPu3btWpEvXA="
@@ -57,4 +56,10 @@ Once you've built this project, you can add it as a dependency to your own proje
 </dependency>
  ```
  
+ ## Using this
+ Just annotate your model's sensitive fields with `@Encrypt` as described at [Spring Data Encryption for MongoDB](https://github.com/bolcom/spring-data-mongodb-encrypt) and set the key and any other `Configuration` properties that you might need for your MongoDB installation. For example,
  
+ ```
+export SPRING_DATA_MONGODB_PORT=27018
+export HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY="hqHKBLV83LpCqzKpf8OvutbCs+O5wX5BPu3btWpEvXA="
+```
