@@ -43,7 +43,7 @@ Once you've built this project, you can add it as a dependency to your own proje
 <dependency>
     <groupId>com.hammingweight</groupId>
     <artifactId>spring-data-mongodb-encrypt-autoconfiguration</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
  Naturally, you'll also need to add a MongoDB dependency
@@ -62,4 +62,7 @@ Just annotate your model's sensitive fields with `@Encrypt` as described at [Spr
 export SPRING_DATA_MONGODB_PORT=27018
 export HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY="hqHKBLV83LpCqzKpf8OvutbCs+O5wX5BPu3btWpEvXA="
 ```
+
+This [unit test](./src/test/java/com/hammingweight/spring/data/mongodb/encrypt/configuration/EncryptionConfiguredTest.java) might be helpful in seeing how to use the *Spring Data Encryption for MongoDB* with autoconfiguration/
+
 
