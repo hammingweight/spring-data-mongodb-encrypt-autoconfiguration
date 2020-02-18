@@ -60,7 +60,6 @@ public class EncryptionNotConfiguredTest {
 
     @Test
     public void testDescriptionIsNotEncrypted() {
-        // We should not be able to query on the value of an encrypted field.
         Query query = new Query();
         query.addCriteria(Criteria.where("description").is("Contraption"));
         Collection<Widget> widgets = mongoTemplate.find(query, Widget.class, "widget");
