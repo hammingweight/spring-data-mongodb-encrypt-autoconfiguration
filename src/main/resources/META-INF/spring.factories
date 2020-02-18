@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.hammingweight.spring.data.mongodb/encrypt.configuration.AutoConfiguration
+com.hammingweight.spring.data.mongodb.encrypt.configuration.AutoConfiguration
