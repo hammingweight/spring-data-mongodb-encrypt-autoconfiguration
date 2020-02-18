@@ -63,6 +63,6 @@ export SPRING_DATA_MONGODB_PORT=27018
 export HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY="hqHKBLV83LpCqzKpf8OvutbCs+O5wX5BPu3btWpEvXA="
 ```
 
-This [unit test](./src/test/java/com/hammingweight/spring/data/mongodb/encrypt/configuration/EncryptionConfiguredTest.java) might be helpful in seeing how to use the *Spring Data Encryption for MongoDB* with autoconfiguration/
+This [unit test](./src/test/java/com/hammingweight/spring/data/mongodb/encrypt/configuration/EncryptionConfiguredTest.java) might be helpful in seeing how to use the *Spring Data Encryption for MongoDB* with autoconfiguration.
 
 
