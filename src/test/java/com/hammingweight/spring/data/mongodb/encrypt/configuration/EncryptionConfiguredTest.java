@@ -45,7 +45,7 @@ public class EncryptionConfiguredTest {
 
     @Test
     public void cryptVaultInstantiated() {
-        // Exactly one CryptVault should have been configured
+        // Exactly one CryptVault should have been configured.
         List<String> beanNames = Arrays.asList(applicationContext.getBeanDefinitionNames());
         List<?> beans = beanNames.stream()
                 .map(applicationContext::getBean)
@@ -56,6 +56,7 @@ public class EncryptionConfiguredTest {
 
     @Test
     public void sanityTest() {
+        // There should be exactly two widgets in the "widget" collection.
         assertEquals(2, mongoTemplate.findAll(Widget.class, "widget").size());
     }
 
@@ -71,6 +72,7 @@ public class EncryptionConfiguredTest {
     @Test
     public void testDescriptionIsEncrypted() {
         // We should not be able to query on the value of an encrypted field.
+        // This is a hack to test that the "description" field is encrypted.
         Query query = new Query();
         query.addCriteria(Criteria.where("description").is("Contraption"));
         Collection<Widget> widgets = mongoTemplate.find(query, Widget.class, "widget");
