@@ -18,6 +18,11 @@ import java.util.Base64;
 @ConditionalOnProperty("hammingweight.spring.data.mongodb.encrypt.key")
 public class AutoConfiguration {
 
+    // We don't need to instantiate this class so reduce visibility.
+    AutoConfiguration() {
+
+    }
+
     // A 256-bit AES key encoded in base64.
     @Value("${hammingweight.spring.data.mongodb.encrypt.key}")
     private String secretKeyInBase64;
