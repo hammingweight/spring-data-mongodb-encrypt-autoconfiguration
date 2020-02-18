@@ -13,10 +13,12 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @EnableAutoConfiguration
@@ -43,8 +45,13 @@ public class EncryptionConfiguredTest {
 
     @Test
     public void cryptVaultInstantiated() {
-        // A CryptVault should have been configured
-        assertNotNull(applicationContext.getBean(CryptVault.class));
+        // Exactly one CryptVault should have been configured
+        List<String> beanNames = Arrays.asList(applicationContext.getBeanDefinitionNames());
+        List<?> beans = beanNames.stream()
+                .map(applicationContext::getBean)
+                .filter(bean -> bean instanceof CryptVault)
+                .collect(Collectors.toList());
+        assertEquals(1, beans.size());
     }
 
     @Test
