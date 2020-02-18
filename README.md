@@ -11,7 +11,7 @@ This might be suitable:
  * You're not using a custom mapper to map Mongo documents to Java domain objects.
  
 The autoconfiguration depends on a single `Configuration` property, `hammingweight.spring.data.mongodb.encrypt.key` being set that
-contains the base-64 encoding of a 128-bit AES key. For example, in `application.properties`
+contains the base-64 encoding of a 256-bit AES key. For example, in `application.properties`
 
 ```
 hammingweight.spring.data.mongodb.encrypt.key=hqHKBLV83LpCqzKpf8OvutbCs+O5wX5BPu3btWpEvXA=
