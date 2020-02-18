@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hammingweight</groupId>
 	<artifactId>spring-data-mongodb-encrypt-autoconfiguration</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<name>spring-data-mongodb-encrypt-autoconfiguration</name>
 	<description>Provides autoconfiguration for bol.com's Spring Data MongoDB Encrypt</description>
 
@@ -48,7 +48,12 @@
 			<version>1.16.16</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>de.flapdoodle.embed</groupId>
+			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			<version>2.2.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
