@@ -13,6 +13,8 @@ import java.util.Base64;
  * Autoconfigures Spring Data Encryption for MongoDB if the <code>Configuration</code> property
  * <code>hammingweight.spring.data.mongodb.encrypt.key</code> contains a 256 bit AES key encoded
  * in base64.
+ * <p>Optionally, the boolean property <code>hammingweight.spring.data.mongodb.encrypt.silent-decryption-failures</code>
+ * can be set to <code>true</code> to ignore decryption failures. If a field cannot be decrypted it will then be deserialized as <code>null</code>.
  */
 @Configuration
 @ConditionalOnProperty("hammingweight.spring.data.mongodb.encrypt.key")

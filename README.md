@@ -43,7 +43,7 @@ Once you've built this project, you can add it as a dependency to your own proje
 <dependency>
     <groupId>com.hammingweight</groupId>
     <artifactId>spring-data-mongodb-encrypt-autoconfiguration</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
 </dependency>
 ```
  Naturally, you'll also need to add a MongoDB dependency

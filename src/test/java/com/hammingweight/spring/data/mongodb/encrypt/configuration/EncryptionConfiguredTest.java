@@ -38,9 +38,18 @@ public class EncryptionConfiguredTest {
     public void populateDb() {
         mongoTemplate.dropCollection(Widget.class);
         Widget widget1 = new Widget(1, "Gizmo", 100);
-        Widget widget2 = new Widget(2, "Contraption", 120);
         mongoTemplate.save(widget1);
+        Widget widget2 = new Widget(2, "Contraption", 120);
         mongoTemplate.save(widget2);
+        Widget widget3 = new Widget(3, "Device", 90);
+        mongoTemplate.save(widget3);
+    }
+
+    @Test
+    public void sanityTest() {
+        // There should be exactly three widgets in the "widget" collection.
+        // If this test fails, any other tests will be meaningless.
+        assertEquals(3, mongoTemplate.findAll(Widget.class, "widget").size());
     }
 
     @Test
@@ -55,18 +64,12 @@ public class EncryptionConfiguredTest {
     }
 
     @Test
-    public void sanityTest() {
-        // There should be exactly two widgets in the "widget" collection.
-        assertEquals(2, mongoTemplate.findAll(Widget.class, "widget").size());
-    }
-
-    @Test
     public void testPriceIsNotEncrypted() {
         // We should be able to query on the value of an unencrypted field.
         Query query = new Query();
-        query.addCriteria(Criteria.where("price").is(100));
+        query.addCriteria(Criteria.where("price").lte(100));
         Collection<Widget> widgets = mongoTemplate.find(query, Widget.class, "widget");
-        assertEquals(1, widgets.size());
+        assertEquals(2, widgets.size());
     }
 
     @Test

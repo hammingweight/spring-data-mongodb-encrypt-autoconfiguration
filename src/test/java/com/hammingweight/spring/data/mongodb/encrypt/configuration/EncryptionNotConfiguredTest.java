@@ -44,6 +44,11 @@ public class EncryptionNotConfiguredTest {
     }
 
     @Test
+    public void sanityTest() {
+        assertEquals(2, mongoTemplate.findAll(Widget.class, "widget").size());
+    }
+
+    @Test
     public void cryptVaultNotInstantiated() {
         // A CryptVault should not have been configured
         List<String> beanNames = Arrays.asList(applicationContext.getBeanDefinitionNames());
@@ -51,11 +56,6 @@ public class EncryptionNotConfiguredTest {
                 .map(applicationContext::getBean)
                 .anyMatch(bean -> bean instanceof CryptVault);
         assertFalse(contextContainsCryptVault);
-    }
-
-    @Test
-    public void sanityTest() {
-        assertEquals(2, mongoTemplate.findAll(Widget.class, "widget").size());
     }
 
     @Test
