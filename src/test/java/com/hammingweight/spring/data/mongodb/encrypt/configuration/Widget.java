@@ -1,6 +1,5 @@
 package com.hammingweight.spring.data.mongodb.encrypt.configuration;
 
-
 import com.bol.secure.Encrypted;
 import lombok.AllArgsConstructor;
 import lombok.Data;
