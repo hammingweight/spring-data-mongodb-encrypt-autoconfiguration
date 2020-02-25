@@ -26,7 +26,7 @@ export HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY="hqHKBLV83LpCqzKpf8OvutbCs+
 or, if you've mounted the secret key in a file (perhaps attached to a Docker container)
 
 ```
-HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY=$(</var/secrets/aeskey.txt)
+export HAMMINGWEIGHT_SPRING_DATA_MONGODB_ENCRYPT_KEY=$(</var/secrets/aeskey.txt)
 ```
 
 ## Building this project
