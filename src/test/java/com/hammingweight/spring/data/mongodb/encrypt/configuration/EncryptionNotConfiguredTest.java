@@ -38,8 +38,8 @@ public class EncryptionNotConfiguredTest {
     public void populateDb() {
         mongoTemplate.dropCollection(Widget.class);
         Widget widget1 = new Widget(1, "Gizmo", 10);
-        Widget widget2 = new Widget(2, "Contraption", 15);
         mongoTemplate.save(widget1);
+        Widget widget2 = new Widget(2, "Contraption", 15);
         mongoTemplate.save(widget2);
     }
 

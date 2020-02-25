@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
@@ -54,13 +53,12 @@ public class EncryptionConfiguredTest {
 
     @Test
     public void cryptVaultInstantiated() {
-        // Exactly one CryptVault should have been configured.
         List<String> beanNames = Arrays.asList(applicationContext.getBeanDefinitionNames());
-        List<?> beans = beanNames.stream()
+        // Exactly one CryptVault should have been configured.
+        assertEquals(1, beanNames.stream()
                 .map(applicationContext::getBean)
                 .filter(bean -> bean instanceof CryptVault)
-                .collect(Collectors.toList());
-        assertEquals(1, beans.size());
+                .count());
     }
 
     @Test
